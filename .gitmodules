@@ -1,0 +1,3 @@
+[submodule "PanelsMonster"]
+	path = PanelsMonster
+	url = https://github.com/webjema/PanelsMonster.git
