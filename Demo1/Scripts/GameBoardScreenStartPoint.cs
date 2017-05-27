@@ -11,7 +11,7 @@ public class GameBoardScreenStartPoint : MonoBehaviour {
             .MatchAction(
                 (a) => {
                     GameBoardScreenArguments args = a as GameBoardScreenArguments;
-                    this.InitLevel(args.GetTypedScreenArguments());
+                    this.InitLevel(args.LevelIndex);
                 }, 
                 () => {
                     Debug.LogError("[GameBoardScreenStartPoint] arguments is required to start");
@@ -25,7 +25,7 @@ public class GameBoardScreenStartPoint : MonoBehaviour {
 
         // just to show something
         PanelsManager.Instance.GetPanel("FakeGamePanel")
-            .SetProperty(PanelPropertyName.title, string.Format("Level {0} start", index), PanelPropertyType.text)
+            .SetProperty(PanelPropertyName.title, string.Format("Level {0} started", index), PanelPropertyType.text)
             .Show();
     }
 

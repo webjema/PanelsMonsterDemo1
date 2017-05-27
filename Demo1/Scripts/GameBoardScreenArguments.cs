@@ -6,20 +6,15 @@ using UnityEngine;
 public class GameBoardScreenArguments : IScreenArguments
 {
 
-    private int _levelIndex;
+    public int LevelIndex { get; set; }
 
-    public GameBoardScreenArguments(int arguments)
+    public GameBoardScreenArguments(int levelIndex)
     {
-        this._levelIndex = arguments;
+        this.LevelIndex = levelIndex;
     }
 
     public object GetScreenArguments()
     {
-        return this._levelIndex;
-    }
-
-    public int GetTypedScreenArguments()
-    {
-        return this._levelIndex;
+        return this.LevelIndex;
     }
 }

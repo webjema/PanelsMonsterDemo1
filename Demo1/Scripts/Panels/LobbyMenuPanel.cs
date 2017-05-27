@@ -13,8 +13,13 @@ public class LobbyMenuPanel : Panel {
             case "game_menu":
                 ScreensManager.Instance.PushScreen(ScreensName.GameMenuScreenScene);
                 break;
+            case "login":
+                ScreensManager.Instance.PushScreen(ScreensName.LoginScreenScene);
+                break;
+            case "profile":
+                ScreensManager.Instance.PushScreen(ScreensName.ProfileScreenScene);
+                break;
             case "info_example":
-                //PanelsManager.Instance.GetPanel<LoadingPanel>().MatchAction(p => p.Show(), (e) => Debug.LogError("NotFound!" + e.Message));
                 Action showMoreAction = () => {
                     PanelsManager.Instance.GetPanel(PanelName.SmallInfoPanel)
                     .Reset()
@@ -22,7 +27,7 @@ public class LobbyMenuPanel : Panel {
                     .SetProperty(PanelPropertyName.description, "More info modal panel. Click 'OK' button to close.", PanelPropertyType.text)
                     .SetProperty(PanelPropertyName.button1, "OK", PanelPropertyType.button)
                     .SetAction(PanelActionName.button1click, () => PanelsManager.Instance.GetPanel(PanelName.SmallInfoPanel).Close())
-                    .SetProperty(PanelPropertyName.button2, null, PanelPropertyType.none)
+                    .SetNullProperty(PanelPropertyName.button2) // hides linked object
                     .Show();
                 };
                 PanelsManager.Instance.GetPanel(PanelName.InfoPanel)
