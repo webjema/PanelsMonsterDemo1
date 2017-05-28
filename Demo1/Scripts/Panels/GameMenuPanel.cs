@@ -9,7 +9,7 @@ public class GameMenuPanel : Panel {
 
     public void StartLevel(int index)
     {
-        ScreensManager.Instance.PushScreen(ScreensName.GameBoardScreenScene, new Option<IScreenArguments>(new GameBoardScreenArguments(index)));
+        ScreensManager.Instance.PushScreen(ScreensName.GameBoardScreenScene, Option.Return<IScreenArguments>(new GameBoardScreenArguments(index)));
     }
 
     public override void OnClick(string action)
